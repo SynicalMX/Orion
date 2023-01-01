@@ -1202,7 +1202,11 @@ function OrionLib:MakeWindow(WindowConfig)
 					end
 					Dropdown.Options = Options
 					AddOptions(Dropdown.Options)
-				end  
+				end
+
+				function Dropdown:Destroy()
+					DropdownFrame:Destroy()
+				end
 
 				function Dropdown:Set(Value)
 					if not table.find(Dropdown.Options, Value) then
